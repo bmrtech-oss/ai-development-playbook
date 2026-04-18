@@ -47,10 +47,11 @@ We build in a high-noise environment. This playbook is designed to:
 | **Discovery & Feasibility** | [`/docs/01-discovery/`](docs/01-discovery/) | `slm_vs_llm_decision_framework.md`, `ai_cost_modeling.md` |
 | **Requirements & Grooming** | [`/docs/02-requirements/`](docs/02-requirements/) | `jira_to_github_workflow.md` |
 | **Design & Architecture** | [`/docs/03-design/`](docs/03-design/) | `adr/` (Architecture Decision Records) |
-| **Development** | [`/docs/04-development/`](docs/04-development/) | `python_guidelines.md`, `frontend_vscode_guidelines.md`, `slm_training_guidelines.md`, `model_versioning_registry.md`, `mcp_design_and_development.md`, `dependency_governance.md`, `troubleshooting.md` |
+| **Development** | [`/docs/04-development/`](docs/04-development/) | `python_guidelines.md`, `frontend_vscode_guidelines.md`, `slm_training_guidelines.md`, `model_versioning_registry.md`, `mcp_design_and_development.md`, `dependency_governance.md`, `troubleshooting.md`, `conventions/ai_code_review_checklist.md` |
 | **Testing & QA** | [`/docs/05-testing/`](docs/05-testing/) | `qa_strategy_noise_vs_signal.md`, `slm_evaluation_harness.md`, `e2e_testing_strategy.md` |
 | **Deployment & CI/CD** | [`/docs/06-deployment/`](docs/06-deployment/) | `gitlab_ci_opentofu_guide.md`, `security_scanning.md` |
-| **Operations** | [`/docs/07-operations/`](docs/07-operations/) | `incident_response_runbook.md`, `monitoring_and_alerting.md`, `data_privacy_and_security.md`, `mcp_observability_playbook.md`, `knowledge_graph_maintenance.md` |
+| **Operations** | [`/docs/07-operations/`](docs/07-operations/) | `incident_response_runbook.md`, `monitoring_and_alerting.md`, `data_privacy_and_security.md`, `mcp_observability_playbook.md`, `knowledge_graph_maintenance.md`, `observability/rag_hygiene_dashboard.md` |
+| **Governance & Compliance** | [`/docs/08-governance/`](docs/08-governance/) | `model_card_template.md` |
 | **Team & Organization** | [`/docs/team/`](docs/team/) | `lean_team_design.md`, `communication_bandwidth_management.md` |
 | **Playbooks (Role-Specific)** | [`/docs/playbooks/`](docs/playbooks/) | `tech_lead_release_checklist.md`, `leadership_update_template.md` |
 
