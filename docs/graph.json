@@ -67,245 +67,406 @@
       "size": 10
     },
     {
-      "id": "docs\\CONTRIBUTING.md",
+      "id": "docs/CONTRIBUTING.md",
       "label": "CONTRIBUTING",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\00-onboarding\\developer_onboarding_guide.md",
+      "id": "docs/00-onboarding/developer_onboarding_guide.md",
       "label": "developer_onboarding_guide",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\00-onboarding\\gamification.md",
+      "id": "docs/00-onboarding/gamification.md",
       "label": "gamification",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\00-onboarding\\podcast-subscription.md",
+      "id": "docs/00-onboarding/podcast-subscription.md",
       "label": "podcast-subscription",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\01-discovery\\ai_cost_modeling.md",
+      "id": "docs/01-discovery/ai_cost_modeling.md",
       "label": "ai_cost_modeling",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\01-discovery\\slm_vs_llm_decision_framework.md",
+      "id": "docs/01-discovery/slm_vs_llm_decision_framework.md",
       "label": "slm_vs_llm_decision_framework",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\02-requirements\\jira_to_github_workflow.md",
+      "id": "docs/02-requirements/jira_to_github_workflow.md",
       "label": "jira_to_github_workflow",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\03-design\\adr\\0001-record-architecture-decisions.md",
+      "id": "docs/03-design/adr/0001-record-architecture-decisions.md",
       "label": "0001-record-architecture-decisions",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\api_standards.md",
+      "id": "docs/04-development/api_standards.md",
       "label": "api_standards",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\dependency_governance.md",
+      "id": "docs/04-development/dependency_governance.md",
       "label": "dependency_governance",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\frontend_vscode_guidelines.md",
+      "id": "docs/04-development/frontend_vscode_guidelines.md",
       "label": "frontend_vscode_guidelines",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\mcp_design_and_development.md",
+      "id": "docs/04-development/mcp_design_and_development.md",
       "label": "mcp_design_and_development",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\model_versioning_registry.md",
+      "id": "docs/04-development/model_versioning_registry.md",
       "label": "model_versioning_registry",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\python_guidelines.md",
+      "id": "docs/04-development/python_guidelines.md",
       "label": "python_guidelines",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\setup.md",
+      "id": "docs/04-development/setup.md",
       "label": "setup",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\slm_training_guidelines.md",
+      "id": "docs/04-development/slm_training_guidelines.md",
       "label": "slm_training_guidelines",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\troubleshooting.md",
+      "id": "docs/04-development/troubleshooting.md",
       "label": "troubleshooting",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\conventions\\ai_code_review_checklist.md",
+      "id": "docs/04-development/conventions/ai_code_review_checklist.md",
       "label": "ai_code_review_checklist",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\04-development\\examples\\sample_pr_with_ai_code_review.md",
+      "id": "docs/04-development/examples/sample_pr_with_ai_code_review.md",
       "label": "sample_pr_with_ai_code_review",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\05-testing\\e2e_testing_strategy.md",
+      "id": "docs/05-testing/e2e_testing_strategy.md",
       "label": "e2e_testing_strategy",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\05-testing\\qa_strategy_noise_vs_signal.md",
+      "id": "docs/05-testing/qa_strategy_noise_vs_signal.md",
       "label": "qa_strategy_noise_vs_signal",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\05-testing\\slm_evaluation_harness.md",
+      "id": "docs/05-testing/slm_evaluation_harness.md",
       "label": "slm_evaluation_harness",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\06-deployment\\gitlab_ci_opentofu_guide.md",
+      "id": "docs/06-deployment/gitlab_ci_opentofu_guide.md",
       "label": "gitlab_ci_opentofu_guide",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\06-deployment\\playbook-linter-integration.md",
+      "id": "docs/06-deployment/playbook-linter-integration.md",
       "label": "playbook-linter-integration",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\06-deployment\\security_scanning.md",
+      "id": "docs/06-deployment/security_scanning.md",
       "label": "security_scanning",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\06-deployment\\slm_deployment_runbook.md",
+      "id": "docs/06-deployment/slm_deployment_runbook.md",
       "label": "slm_deployment_runbook",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\data_privacy_and_security.md",
+      "id": "docs/07-operations/data_privacy_and_security.md",
       "label": "data_privacy_and_security",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\incident_response_runbook.md",
+      "id": "docs/07-operations/incident_response_runbook.md",
       "label": "incident_response_runbook",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\knowledge_graph_maintenance.md",
+      "id": "docs/07-operations/knowledge_graph_maintenance.md",
       "label": "knowledge_graph_maintenance",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\mcp_observability_playbook.md",
+      "id": "docs/07-operations/mcp_observability_playbook.md",
       "label": "mcp_observability_playbook",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\monitoring_and_alerting.md",
+      "id": "docs/07-operations/monitoring_and_alerting.md",
       "label": "monitoring_and_alerting",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\observability\\example_responding_to_drift_alert.md",
+      "id": "docs/07-operations/observability/example_responding_to_drift_alert.md",
       "label": "example_responding_to_drift_alert",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\07-operations\\observability\\rag_hygiene_dashboard.md",
+      "id": "docs/07-operations/observability/rag_hygiene_dashboard.md",
       "label": "rag_hygiene_dashboard",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\08-governance\\model_card_template.md",
+      "id": "docs/08-governance/model_card_template.md",
       "label": "model_card_template",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\08-governance\\playbook-copilot-usage.md",
+      "id": "docs/08-governance/playbook-copilot-usage.md",
       "label": "playbook-copilot-usage",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\08-governance\\model-cards\\sample_completed_model_card.md",
+      "id": "docs/08-governance/model-cards/sample_completed_model_card.md",
       "label": "sample_completed_model_card",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\playbooks\\leadership_update_template.md",
+      "id": "docs/playbooks/leadership_update_template.md",
       "label": "leadership_update_template",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\playbooks\\tech_lead_release_checklist.md",
+      "id": "docs/playbooks/tech_lead_release_checklist.md",
       "label": "tech_lead_release_checklist",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\team\\communication_bandwidth_management.md",
+      "id": "docs/team/communication_bandwidth_management.md",
       "label": "communication_bandwidth_management",
       "group": "file",
       "size": 5
     },
     {
-      "id": "docs\\team\\lean_team_design.md",
+      "id": "docs/team/lean_team_design.md",
       "label": "lean_team_design",
       "group": "file",
       "size": 5
     }
   ],
-  "links": []
+  "links": [
+    {
+      "source": 0,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 11
+    },
+    {
+      "source": 0,
+      "target": 13
+    },
+    {
+      "source": 0,
+      "target": 14
+    },
+    {
+      "source": 1,
+      "target": 15
+    },
+    {
+      "source": 1,
+      "target": 16
+    },
+    {
+      "source": 2,
+      "target": 17
+    },
+    {
+      "source": 4,
+      "target": 19
+    },
+    {
+      "source": 4,
+      "target": 20
+    },
+    {
+      "source": 4,
+      "target": 21
+    },
+    {
+      "source": 21,
+      "target": 20
+    },
+    {
+      "source": 4,
+      "target": 22
+    },
+    {
+      "source": 22,
+      "target": 19
+    },
+    {
+      "source": 4,
+      "target": 23
+    },
+    {
+      "source": 23,
+      "target": 15
+    },
+    {
+      "source": 4,
+      "target": 24
+    },
+    {
+      "source": 24,
+      "target": 20
+    },
+    {
+      "source": 4,
+      "target": 25
+    },
+    {
+      "source": 4,
+      "target": 26
+    },
+    {
+      "source": 26,
+      "target": 23
+    },
+    {
+      "source": 4,
+      "target": 27
+    },
+    {
+      "source": 5,
+      "target": 30
+    },
+    {
+      "source": 5,
+      "target": 31
+    },
+    {
+      "source": 5,
+      "target": 32
+    },
+    {
+      "source": 6,
+      "target": 33
+    },
+    {
+      "source": 6,
+      "target": 34
+    },
+    {
+      "source": 6,
+      "target": 35
+    },
+    {
+      "source": 6,
+      "target": 36
+    },
+    {
+      "source": 7,
+      "target": 37
+    },
+    {
+      "source": 7,
+      "target": 38
+    },
+    {
+      "source": 7,
+      "target": 39
+    },
+    {
+      "source": 7,
+      "target": 40
+    },
+    {
+      "source": 40,
+      "target": 22
+    },
+    {
+      "source": 7,
+      "target": 41
+    },
+    {
+      "source": 8,
+      "target": 44
+    },
+    {
+      "source": 8,
+      "target": 45
+    },
+    {
+      "source": 10,
+      "target": 47
+    },
+    {
+      "source": 10,
+      "target": 48
+    },
+    {
+      "source": 9,
+      "target": 49
+    },
+    {
+      "source": 9,
+      "target": 50
+    }
+  ]
 }
