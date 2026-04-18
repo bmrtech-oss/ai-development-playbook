@@ -8,7 +8,7 @@ Our AI agents use the **Model Context Protocol (MCP)** to call tools (search, fi
 
 ## Quick Start
 
-**New to MCP?** Start with [MCP Design & Development Guide](../../04-development/mcp_design_and_development.md).
+**New to MCP?** Start with [MCP Design & Development Guide](../04-development/mcp_design_and_development.md).
 
 ---
 
