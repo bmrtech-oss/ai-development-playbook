@@ -20,7 +20,7 @@ Our frontend is the primary interface for developer intelligence. It must be **f
 - **Error Boundaries:** Wrap AI-generated content in Error Boundaries. If a model generates malformed markdown or code, the UI should handle it without crashing.
 
 ## Communication (Extension <-> Backend)
-- **JSON-RPC / MCP:** Follow the Model Context Protocol for communication where applicable.
+- **JSON-RPC / MCP:** Follow the Model Context Protocol for communication where applicable. See [MCP Design & Development Guide](mcp_design_and_development.md) for tool design patterns.
 - **Telemetry:** Use the internal telemetry wrapper to log UI interactions (anonymized) to understand feature adoption.
 
 ## Performance Budgets

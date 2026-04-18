@@ -4,6 +4,14 @@
 
 Our AI agents use the **Model Context Protocol (MCP)** to call tools (search, file read, etc.). Observability is critical.
 
+---
+
+## Quick Start
+
+**New to MCP?** Start with [MCP Design & Development Guide](../../04-development/mcp_design_and_development.md).
+
+---
+
 ## What to Monitor
 - **Tool call success rate** (errors/timeouts)
 - **Latency per tool** (p95, p99)

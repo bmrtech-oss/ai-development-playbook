@@ -21,6 +21,7 @@ The VS Code extension must bundle its "Target API Version." The backend must sup
 ## Documentation
 - **Auto-generated:** Swagger/OpenAPI docs must be available at `/docs` in non-production environments.
 - **Examples:** Every endpoint must have a documented example request and response in the Pydantic model `Config`.
+- **MCP Servers:** If building MCP tool servers, follow [MCP Design & Development Guide](mcp_design_and_development.md) for JSON-RPC communication patterns.
 
 ## Error Handling
 Use standard HTTP status codes:
