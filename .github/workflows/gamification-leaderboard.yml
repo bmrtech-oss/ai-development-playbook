@@ -6,6 +6,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   update-leaderboard:
     runs-on: ubuntu-latest
@@ -28,6 +31,7 @@ jobs:
       - name: Update Leaderboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: python scripts/update_leaderboard.py
 
       - name: Commit and push changes
@@ -35,5 +39,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add LEADERBOARD.md
-          git commit -m "Update gamification leaderboard" || echo "No changes to commit"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update gamification leaderboard [skip ci]"
+            git push
+          fi

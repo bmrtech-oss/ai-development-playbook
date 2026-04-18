@@ -9,37 +9,38 @@ def get_contributions():
 
     contributors = defaultdict(lambda: {'prs': 0, 'issues': 0, 'badges': []})
 
-    # Get merged PRs
+    # Get merged PRs (limit to recent ones for performance)
     prs = repo.get_pulls(state='closed')
-    for pr in prs:
+    for pr in prs[:50]:  # Limit to avoid rate limits
         if pr.merged:
             user = pr.user.login
             contributors[user]['prs'] += 1
 
             # Check for specific file changes
-            files = pr.get_files()
-            file_names = [f.filename for f in files]
+            try:
+                files = pr.get_files()
+                file_names = [f.filename for f in files]
 
-            if any('promptfooconfig.yaml' in name or 'eval.py' in name for name in file_names):
-                if '🥈 Practitioner' not in contributors[user]['badges']:
-                    contributors[user]['badges'].append('🥈 Practitioner')
+                if any('promptfooconfig.yaml' in name or 'eval.py' in name for name in file_names):
+                    if '🥈 Practitioner' not in contributors[user]['badges']:
+                        contributors[user]['badges'].append('🥈 Practitioner')
 
-            if any('docs/03-design/adr/' in name or 'docs/07-operations/' in name for name in file_names):
-                if '🥇 Sage' not in contributors[user]['badges']:
-                    contributors[user]['badges'].append('🥇 Sage')
+                if any('docs/03-design/adr/' in name or 'docs/07-operations/' in name for name in file_names):
+                    if '🥇 Sage' not in contributors[user]['badges']:
+                        contributors[user]['badges'].append('🥇 Sage')
 
-            if '🥉 Initiate' not in contributors[user]['badges']:
-                contributors[user]['badges'].append('🥉 Initiate')
+                if '🥉 Initiate' not in contributors[user]['badges']:
+                    contributors[user]['badges'].append('🥉 Initiate')
+            except:
+                # Skip if can't access files
+                pass
 
-    # Get issues
+    # Get issues (limit to recent ones)
     issues = repo.get_issues(state='all')
-    for issue in issues:
+    for issue in issues[:50]:  # Limit to avoid rate limits
         if not issue.pull_request:
             user = issue.user.login
             contributors[user]['issues'] += 1
-
-    # Get stargazers (simplified - would need PAT with star scope)
-    # For now, skip or implement with proper token
 
     return contributors
 
