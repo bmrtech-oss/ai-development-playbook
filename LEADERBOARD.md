@@ -11,8 +11,6 @@ This leaderboard recognizes contributors who have mastered different aspects of 
 
 | Rank | GitHub Handle | Badges Earned | Contributions |
 |------|---------------|---------------|---------------|
-| 1    | @example-user | 🥇🥈🥉🌟 | 15 PRs, 5 Issues |
-| 2    | @another-user | 🥈🥉 | 8 PRs |
 
 *This leaderboard updates daily via GitHub Action.*
 
