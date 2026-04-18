@@ -1,0 +1,16 @@
+[project]
+name = "slm-eval-template"
+version = "0.1.0"
+description = "Minimal promptfoo evaluation template for SLMs"
+authors = ["AI Platform Team <platform@bmrtech.io>"]
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.dependencies]
+promptfoo = "^0.14"
+openai = "^1.0"
+python-dotenv = "^1.0"
+
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"

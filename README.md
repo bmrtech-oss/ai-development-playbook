@@ -32,6 +32,22 @@ We build in a high-noise environment. This playbook is designed to:
 
 ---
 
+## Visual Decision Guide
+
+New to AI Platform decisions? Start here.
+
+```mermaid
+graph TD
+  A[Does data leave our VPC?] -->|Yes| B[Use an SLM]
+  A -->|No| C[Is latency <200ms required?]
+  C -->|Yes| B
+  C -->|No| D[Is cost a top-3 concern?]
+  D -->|Yes| B
+  D -->|No| E[Use an LLM]
+```
+
+> If you want, save this diagram as `assets/slm_vs_llm_decision_tree.png` for README embedding or community sharing.
+
 ## Quick Navigation
 
 ### 🚀 New Here? Start with Onboarding
@@ -77,6 +93,14 @@ This playbook belongs to **all of us**. It's not a static decree.
 - **Quick thoughts or questions?** Use the **#eng-process** Slack channel.
 - **Concrete changes?** Open a PR against this repository. Treat process changes with the same rigor as code changes.
 - **Bigger discussions?** Bring it up in the monthly Architecture Forum.
+
+## Recommended Next Actions
+
+- Enable GitHub Discussions in repository settings so the `show_and_tell` template is active.
+- Cross-link `AWESOME.md`, `STARTER_KITS.md`, and `quickstart/slm-eval-template/README.md` from the main README.
+- Render the Mermaid decision tree as `assets/slm_vs_llm_decision_tree.png` for better shareability.
+- Announce the AI Code Review Checklist and quickstart guide in community forums or dev.to.
+- Add a short `ROADMAP.md` entry for community onboarding and shareable documentation.
 
 See [`/docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) for detailed guidelines.
 

@@ -1,0 +1,37 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "rag-hygiene-dashboard",
+    "title": "RAG Hygiene Dashboard",
+    "tags": ["rag", "observability", "pgvector"],
+    "timezone": "browser",
+    "schemaVersion": 30,
+    "version": 1,
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Embedding Drift Over Time",
+        "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rag_embedding_drift_percent",
+            "legendFormat": "Drift %"
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": "Top Drifted Queries",
+        "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rag_top_drifted_queries",
+            "legendFormat": "Query"
+          }
+        ]
+      }
+    ]
+  }
+}

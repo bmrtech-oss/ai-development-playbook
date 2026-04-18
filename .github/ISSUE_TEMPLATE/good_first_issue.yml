@@ -1,0 +1,39 @@
+name: Good First Issue
+about: Report a simple, high-value improvement that helps new contributors get started.
+title: "[Good First Issue] "
+labels:
+  - good first issue
+  - help wanted
+body:
+  - type: markdown
+    attributes:
+      value: "### Description\nProvide a short summary of the issue and why it matters."
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain the issue in your own words.
+      placeholder: "The button misaligns on mobile when the help drawer is open."
+      value: ""
+  - type: textarea
+    id: expected_outcome
+    attributes:
+      label: Expected Outcome
+      description: What should happen after this issue is resolved?
+      placeholder: "The UI button should stay aligned on all screen sizes."
+      value: ""
+  - type: textarea
+    id: resources
+    attributes:
+      label: Helpful Resources
+      description: Link to docs, files, or related issues.
+      placeholder: "See README.md and docs/04-development/frontend_vscode_guidelines.md"
+      value: ""
+  - type: checkbox
+    id: new_contributor
+    attributes:
+      label: I’m new to this repo
+      options:
+        - label: I’m new to this repo
+          value: yes
+          description: "Check this if you are contributing for the first time."

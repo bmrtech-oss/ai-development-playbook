@@ -1,0 +1,38 @@
+name: Show and Tell
+about: Share how you adapted or used this playbook in your project.
+title: "Show and Tell: "
+labels:
+  - show and tell
+body:
+  - type: markdown
+    attributes:
+      value: "### What I built or adapted\nShare the project, team, or workflow where you used the playbook."
+  - type: textarea
+    id: project_summary
+    attributes:
+      label: Project summary
+      description: Describe the adaptation or integration.
+      placeholder: "We used the AI code review checklist in our internal developer tooling."
+      value: ""
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What improved after applying the playbook?
+      placeholder: "Review quality improved and onboarding time decreased by 20%."
+      value: ""
+  - type: textarea
+    id: resources
+    attributes:
+      label: Helpful Resources
+      description: Link to relevant docs, PRs, or blog posts.
+      placeholder: "Link to the repo, a PR, or an external write-up."
+      value: ""
+  - type: checkbox
+    id: share_permission
+    attributes:
+      label: I agree to share this publicly
+      options:
+        - label: I agree to share this publicly
+          value: yes
+          description: "Check this if you are comfortable with the content being visible to the community."

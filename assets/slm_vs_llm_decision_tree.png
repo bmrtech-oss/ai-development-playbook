@@ -1,0 +1,11 @@
+Placeholder: Render the following Mermaid flowchart into an image file named `slm_vs_llm_decision_tree.png`.
+
+```mermaid
+graph TD
+  A[Does data leave our VPC?] -->|Yes| B[Use an SLM]
+  A -->|No| C[Is latency <200ms required?]
+  C -->|Yes| B
+  C -->|No| D[Is cost a top-3 concern?]
+  D -->|Yes| B
+  D -->|No| E[Use an LLM]
+```
