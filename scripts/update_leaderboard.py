@@ -1,17 +1,21 @@
 import os
-from github import Github
+from github import Github, Auth
 from collections import defaultdict
 
 def get_contributions():
     """Fetch contributions from GitHub API."""
-    g = Github(os.getenv('GITHUB_TOKEN'))
+    auth = Auth.Token(os.getenv('GITHUB_TOKEN'))
+    g = Github(auth=auth)
     repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))
 
     contributors = defaultdict(lambda: {'prs': 0, 'issues': 0, 'badges': []})
 
     # Get merged PRs (limit to recent ones for performance)
     prs = repo.get_pulls(state='closed')
-    for pr in prs[:50]:  # Limit to avoid rate limits
+    count = 0
+    for pr in prs:
+        if count >= 50:  # Limit to avoid rate limits
+            break
         if pr.merged:
             user = pr.user.login
             contributors[user]['prs'] += 1
@@ -34,13 +38,18 @@ def get_contributions():
             except:
                 # Skip if can't access files
                 pass
+        count += 1
 
     # Get issues (limit to recent ones)
     issues = repo.get_issues(state='all')
-    for issue in issues[:50]:  # Limit to avoid rate limits
+    issue_count = 0
+    for issue in issues:
+        if issue_count >= 50:  # Limit to avoid rate limits
+            break
         if not issue.pull_request:
             user = issue.user.login
             contributors[user]['issues'] += 1
+        issue_count += 1
 
     return contributors
 
