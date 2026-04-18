@@ -48,7 +48,7 @@ graph TD
 
 > If you want, save this diagram as `assets/slm_vs_llm_decision_tree.png` for README embedding or community sharing.
 
-## [Explore the Playbook World (Interactive Map)](https://bmrtech-oss.github.io/ai-development-playbook/)
+## [Explore the Playbook World (Interactive Map)](https://bmrtech-oss.github.io/ai-development-playbook/docs/index.html)
 
 ## Quick Navigation
 
