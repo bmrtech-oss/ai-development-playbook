@@ -112,8 +112,8 @@ Current version: `1.0.0`
 
 ## Maintainers
 
-- [Your Name] — [Your Role]
-- [Another Name] — [Another Role]
+- [bmrtech-oss] — [contributor]
+- [bmrtech@myyahoo.com] — [contributor]
 
 *This list is the current "Kernel Team" responsible for curating the playbook. It rotates quarterly.*
 
