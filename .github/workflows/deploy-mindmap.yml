@@ -16,9 +16,6 @@ concurrency:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,6 +32,15 @@ jobs:
 
       - name: Generate Graph Data
         run: python scripts/generate_graph_data.py
+
+      - name: Verify deployment files
+        run: |
+          echo "Checking deployment files..."
+          ls -la docs/
+          echo "Checking index.html size:"
+          wc -c docs/index.html
+          echo "Checking graph.json validity:"
+          python -c "import json; json.load(open('docs/graph.json')); print('graph.json is valid JSON')"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
