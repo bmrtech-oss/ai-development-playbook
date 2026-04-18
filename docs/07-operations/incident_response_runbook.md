@@ -69,3 +69,74 @@ See [Monitoring & Alerting Playbook](monitoring_and_alerting.md) for:
 ## Action Items
 - [ ] ...
 ```
+
+---
+
+## Incident Response Drills
+
+We conduct **quarterly incident response drills** to ensure our processes work under pressure and team members stay familiar with the runbook.
+
+### Drill Schedule
+
+- **Frequency:** Quarterly (Q1, Q4, Q7, Q10)
+- **Duration:** 2 hours
+- **Format:** Simulated incident with real-time response
+- **Participants:** Full on-call rotation + observers
+
+### Drill Scenarios
+
+We rotate through these scenarios to cover different failure modes:
+
+1. **Database Outage** (Q1)
+   - Simulate PostgreSQL primary failure
+   - Test failover to read replica
+   - Verify data consistency
+
+2. **SLM Inference Failure** (Q4)
+   - Simulate model loading errors
+   - Test fallback to baseline model
+   - Verify graceful degradation
+
+3. **VS Code Extension Crash** (Q7)
+   - Simulate extension runtime errors
+   - Test auto-restart mechanisms
+   - Verify user experience continuity
+
+4. **CI/CD Pipeline Break** (Q10)
+   - Simulate GitLab CI failures
+   - Test rollback procedures
+   - Verify deployment safety nets
+
+### Drill Process
+
+1. **Preparation (30 min)**
+   - On-call engineer briefed on scenario
+   - Observers assigned monitoring roles
+   - Chat channels set up for communication
+
+2. **Execution (60 min)**
+   - Scenario triggered at random time
+   - On-call responds per runbook
+   - Observers note process gaps
+
+3. **Debrief (30 min)**
+   - Timeline review
+   - Process improvements identified
+   - Action items assigned
+
+### Success Criteria
+
+- **Response SLA met:** Alert acknowledged within 5 min
+- **Communication clear:** Stakeholders updated every 15 min
+- **Mitigation effective:** Service restored within target time
+- **Postmortem complete:** Documented within 48 hours
+
+### Drill Results
+
+| Quarter | Scenario | Response Time | Issues Found | Status |
+|---------|----------|---------------|--------------|--------|
+| Q1 2026 | Database Outage | 4 min | 2 minor | ✅ Passed |
+| Q4 2025 | SLM Inference | 6 min | 1 major | ⚠️ Passed w/ issues |
+| Q3 2025 | Extension Crash | 3 min | 0 | ✅ Passed |
+
+**Next drill:** Q4 2026 (Database Outage) - Scheduled for 2026-10-15

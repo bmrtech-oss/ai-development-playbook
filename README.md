@@ -15,7 +15,7 @@ This repository contains our **AI Project Playbook** — a living, collaborative
 - **Backend:** Python, FastAPI, Pydantic, LangChain, tree-sitter
 - **Frontend:** TypeScript, React, VS Code extension, Electron, Radix UI, Shadcn, Tailwind
 - **Infrastructure:** GCP, AWS, OpenTofu (IaC), GitLab CI, PostgreSQL + pgvector
-- **Quality:** Kiwi TCMS, pytest, promptfoo, Playwright (planned)
+- **Quality:** Kiwi TCMS, pytest, promptfoo, Playwright
 
 ---
 
@@ -105,6 +105,7 @@ Current version: `1.0.0`
 | Monitoring & alerting | ✅ Active | 2026-04-18 | @sre |
 | Last incident postmortem | ✅ 2026-04-10 (48h SLA met) | — | — |
 | Mean onboarding time | ✅ 3 days | 2026-04-18 | @eng-lead |
+| Incident response drills | ✅ Q4 2026 scheduled | 2026-04-18 | @eng-ops |
 
 **This playbook is live and actively maintained.** Updates are merged weekly. [View change log](ROADMAP.md).
 
