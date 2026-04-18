@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>AI Development Playbook Podcast</title>
+    <description>Weekly updates on AI engineering practices, playbook changes, and community insights.</description>
+    <link>https://github.com/bmrtech-oss/ai-development-playbook</link>
+    <language>en-us</language>
+    <itunes:author>AI Platform Team</itunes:author>
+    <itunes:summary>Stay updated with the latest in AI development practices through weekly podcast episodes.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>AI Platform Team</itunes:name>
+      <itunes:email>platform@bmrtech.io</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://github.com/bmrtech-oss/ai-development-playbook/raw/main/assets/podcast-cover.png"/>
+    <itunes:category text="Technology"/>
+    <item>
+      <title>Episode 1: Welcome to the Playbook</title>
+      <description>Welcome to the first episode of the AI Development Playbook Podcast. We discuss the core tenets and recent updates.</description>
+      <enclosure url="https://storage.example.com/episode1.mp3" length="12345678" type="audio/mpeg"/>
+      <guid>https://storage.example.com/episode1.mp3</guid>
+      <pubDate>Mon, 18 Apr 2026 09:00:00 GMT</pubDate>
+      <itunes:duration>00:15:30</itunes:duration>
+    </item>
+    <!-- Add more <item> elements for each episode -->
+  </channel>
+</rss>

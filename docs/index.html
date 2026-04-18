@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook World - Interactive Mind Map</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #search { position: absolute; top: 10px; left: 10px; z-index: 1000; }
+        #graph { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search nodes...">
+    <div id="graph"></div>
+
+    <script>
+        // Load graph data
+        d3.json('graph.json').then(data => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            const svg = d3.select('#graph')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const simulation = d3.forceSimulation(data.nodes)
+                .force('link', d3.forceLink(data.links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2));
+
+            const link = svg.append('g')
+                .selectAll('line')
+                .data(data.links)
+                .enter().append('line')
+                .attr('stroke', '#999')
+                .attr('stroke-opacity', 0.6)
+                .attr('stroke-width', 1);
+
+            const node = svg.append('g')
+                .selectAll('circle')
+                .data(data.nodes)
+                .enter().append('circle')
+                .attr('r', d => Math.sqrt(d.size) * 5 || 5)
+                .attr('fill', d => d.group === 'phase' ? '#ff7f0e' : '#1f77b4')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+
+            const label = svg.append('g')
+                .selectAll('text')
+                .data(data.nodes)
+                .enter().append('text')
+                .text(d => d.label)
+                .attr('font-size', 12)
+                .attr('dx', 12)
+                .attr('dy', 4)
+                .style('pointer-events', 'none');
+
+            node.on('click', d => {
+                window.open(`https://github.com/bmrtech-oss/ai-development-playbook/blob/main/${d.id}`, '_blank');
+            });
+
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+
+                label
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+
+            // Search functionality
+            d3.select('#search').on('input', function() {
+                const query = this.value.toLowerCase();
+                node.style('opacity', d => d.label.toLowerCase().includes(query) ? 1 : 0.1);
+                label.style('opacity', d => d.label.toLowerCase().includes(query) ? 1 : 0.1);
+                link.style('opacity', d => {
+                    const sourceMatch = d.source.label.toLowerCase().includes(query);
+                    const targetMatch = d.target.label.toLowerCase().includes(query);
+                    return (sourceMatch || targetMatch) ? 1 : 0.1;
+                });
+            });
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        });
+    </script>
+</body>
+</html>

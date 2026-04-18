@@ -1,0 +1,29 @@
+name: Playbook Copilot
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  copilot:
+    if: contains(github.event.comment.body, '/ask')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai chromadb tiktoken markdown PyGithub
+
+      - name: Run Playbook Copilot
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/playbook_copilot.py
