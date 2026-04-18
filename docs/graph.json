@@ -1,0 +1,311 @@
+{
+  "nodes": [
+    {
+      "id": "docs/00-onboarding/",
+      "label": " Onboarding",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/01-discovery/",
+      "label": "1 Discovery",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/02-requirements/",
+      "label": "2 Requirements",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/03-design/",
+      "label": "3 Design",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/04-development/",
+      "label": "4 Development",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/05-testing/",
+      "label": "5 Testing",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/06-deployment/",
+      "label": "6 Deployment",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/07-operations/",
+      "label": "7 Operations",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/08-governance/",
+      "label": "8 Governance",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/team/",
+      "label": "Team",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs/playbooks/",
+      "label": "Playbooks",
+      "group": "phase",
+      "size": 10
+    },
+    {
+      "id": "docs\\CONTRIBUTING.md",
+      "label": "CONTRIBUTING",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\00-onboarding\\developer_onboarding_guide.md",
+      "label": "developer_onboarding_guide",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\00-onboarding\\gamification.md",
+      "label": "gamification",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\00-onboarding\\podcast-subscription.md",
+      "label": "podcast-subscription",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\01-discovery\\ai_cost_modeling.md",
+      "label": "ai_cost_modeling",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\01-discovery\\slm_vs_llm_decision_framework.md",
+      "label": "slm_vs_llm_decision_framework",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\02-requirements\\jira_to_github_workflow.md",
+      "label": "jira_to_github_workflow",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\03-design\\adr\\0001-record-architecture-decisions.md",
+      "label": "0001-record-architecture-decisions",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\api_standards.md",
+      "label": "api_standards",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\dependency_governance.md",
+      "label": "dependency_governance",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\frontend_vscode_guidelines.md",
+      "label": "frontend_vscode_guidelines",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\mcp_design_and_development.md",
+      "label": "mcp_design_and_development",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\model_versioning_registry.md",
+      "label": "model_versioning_registry",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\python_guidelines.md",
+      "label": "python_guidelines",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\setup.md",
+      "label": "setup",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\slm_training_guidelines.md",
+      "label": "slm_training_guidelines",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\troubleshooting.md",
+      "label": "troubleshooting",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\conventions\\ai_code_review_checklist.md",
+      "label": "ai_code_review_checklist",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\04-development\\examples\\sample_pr_with_ai_code_review.md",
+      "label": "sample_pr_with_ai_code_review",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\05-testing\\e2e_testing_strategy.md",
+      "label": "e2e_testing_strategy",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\05-testing\\qa_strategy_noise_vs_signal.md",
+      "label": "qa_strategy_noise_vs_signal",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\05-testing\\slm_evaluation_harness.md",
+      "label": "slm_evaluation_harness",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\06-deployment\\gitlab_ci_opentofu_guide.md",
+      "label": "gitlab_ci_opentofu_guide",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\06-deployment\\playbook-linter-integration.md",
+      "label": "playbook-linter-integration",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\06-deployment\\security_scanning.md",
+      "label": "security_scanning",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\06-deployment\\slm_deployment_runbook.md",
+      "label": "slm_deployment_runbook",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\data_privacy_and_security.md",
+      "label": "data_privacy_and_security",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\incident_response_runbook.md",
+      "label": "incident_response_runbook",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\knowledge_graph_maintenance.md",
+      "label": "knowledge_graph_maintenance",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\mcp_observability_playbook.md",
+      "label": "mcp_observability_playbook",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\monitoring_and_alerting.md",
+      "label": "monitoring_and_alerting",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\observability\\example_responding_to_drift_alert.md",
+      "label": "example_responding_to_drift_alert",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\07-operations\\observability\\rag_hygiene_dashboard.md",
+      "label": "rag_hygiene_dashboard",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\08-governance\\model_card_template.md",
+      "label": "model_card_template",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\08-governance\\playbook-copilot-usage.md",
+      "label": "playbook-copilot-usage",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\08-governance\\model-cards\\sample_completed_model_card.md",
+      "label": "sample_completed_model_card",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\playbooks\\leadership_update_template.md",
+      "label": "leadership_update_template",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\playbooks\\tech_lead_release_checklist.md",
+      "label": "tech_lead_release_checklist",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\team\\communication_bandwidth_management.md",
+      "label": "communication_bandwidth_management",
+      "group": "file",
+      "size": 5
+    },
+    {
+      "id": "docs\\team\\lean_team_design.md",
+      "label": "lean_team_design",
+      "group": "file",
+      "size": 5
+    }
+  ],
+  "links": []
+}
