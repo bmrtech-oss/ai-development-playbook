@@ -9,12 +9,14 @@
 
 ## What Is This?
 
-This repository contains our **AI Project Playbook** — a living, collaborative guide to building the AI Platform. It covers the entire software development lifecycle, tailored for our unique stack:
+This repository contains our **AI Project Playbook** — a living, collaborative guide to building the AI Platform. It covers the entire software development lifecycle, tailored for our unique stack.
+
+> This playbook is an early-stage reference, not a turnkey product. Teams should adapt the guidance to their own workflows, compliance requirements, vendor agreements, and technology platforms.
 
 - **AI/ML:** SLM training, prompt engineering, MCP toolset, RAG with pgvector, RDF knowledge graphs
-- **Backend:** Python, FastAPI, Pydantic, LangChain, tree-sitter
-- **Frontend:** TypeScript, React, VS Code extension, Electron, Radix UI, Shadcn, Tailwind
-- **Infrastructure:** GCP, AWS, OpenTofu (IaC), GitLab CI, PostgreSQL + pgvector
+- **Backend:** Python, FastAPI, Pydantic, LangChain, tree-sitter (also applicable to Node.js, .NET, Java, and other enterprise backends)
+- **Frontend:** TypeScript, React, VS Code extension, Electron, Radix UI, Shadcn, Tailwind (also compatible with Next.js, Vue, and hybrid UI patterns)
+- **Infrastructure:** GCP, AWS, OpenTofu (IaC), GitLab CI, Docker, Azure, on-prem hybrid patterns
 - **Quality:** Kiwi TCMS, pytest, promptfoo, Playwright
 
 ---
@@ -66,9 +68,9 @@ graph TD
 | **Requirements & Grooming** | [`/docs/02-requirements/`](docs/02-requirements/) | `jira_to_github_workflow.md` |
 | **Design & Architecture** | [`/docs/03-design/`](docs/03-design/) | `adr/` (Architecture Decision Records) |
 | **Development** | [`/docs/04-development/`](docs/04-development/) | `python_guidelines.md`, `frontend_vscode_guidelines.md`, `slm_training_guidelines.md`, `model_versioning_registry.md`, `mcp_design_and_development.md`, `dependency_governance.md`, `troubleshooting.md`, `conventions/ai_code_review_checklist.md` |
-| **Testing & QA** | [`/docs/05-testing/`](docs/05-testing/) | `qa_strategy_noise_vs_signal.md`, `slm_evaluation_harness.md`, `e2e_testing_strategy.md` |
-| **Deployment & CI/CD** | [`/docs/06-deployment/`](docs/06-deployment/) | `gitlab_ci_opentofu_guide.md`, `security_scanning.md` |
-| **Operations** | [`/docs/07-operations/`](docs/07-operations/) | `incident_response_runbook.md`, `monitoring_and_alerting.md`, `data_privacy_and_security.md`, `mcp_observability_playbook.md`, `knowledge_graph_maintenance.md`, `observability/rag_hygiene_dashboard.md` |
+| **Testing & QA** | [`/docs/05-testing/`](docs/05-testing/) | `testing_lifecycle_maturity.md`, `qa_strategy_noise_vs_signal.md`, `slm_evaluation_harness.md`, `e2e_testing_strategy.md` |
+| **Deployment & CI/CD** | [`/docs/06-deployment/`](docs/06-deployment/) | `azure_onprem_guide.md`, `aws_onprem_guide.md`, `gitlab_ci_opentofu_guide.md`, `security_scanning.md` |
+| **Operations** | [`/docs/07-operations/`](docs/07-operations/) | `operations_maturity.md`, `incident_response_runbook.md`, `monitoring_and_alerting.md`, `data_privacy_and_security.md`, `mcp_observability_playbook.md`, `knowledge_graph_maintenance.md`, `observability/rag_hygiene_dashboard.md` |
 | **Governance & Compliance** | [`/docs/08-governance/`](docs/08-governance/) | `model_card_template.md` |
 | **Team & Organization** | [`/docs/team/`](docs/team/) | `lean_team_design.md`, `communication_bandwidth_management.md` |
 | **Playbooks (Role-Specific)** | [`/docs/playbooks/`](docs/playbooks/) | `tech_lead_release_checklist.md`, `leadership_update_template.md` |

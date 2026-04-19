@@ -7,6 +7,8 @@
 
 This guide will get you from zero to productive on the AI Platform.
 
+> Note: This playbook is a reference framework, not a finished product. Expect to adapt the guidance to your team’s workflows, compliance controls, and tech stack.
+
 ---
 
 ## Reading Roadmap (By Day)

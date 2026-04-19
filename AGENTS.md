@@ -6,10 +6,10 @@ This file provides essential context for AI coding assistants (Cursor, Copilot, 
 We are building a **AI Platform** — an AI‑powered developer tool that combines static analysis, semantic search, and SLMs to accelerate software development.
 
 ## Technology Stack
-- **Backend:** Python 3.11+, FastAPI, Pydantic v2, LangChain, tree‑sitter
-- **Frontend:** TypeScript, React 18, Vite, Tailwind, Radix UI / Shadcn
+- **Backend:** Python 3.11+, FastAPI, Pydantic v2, LangChain, tree‑sitter (also extendable to Node.js, Java, .NET, and hybrid API stacks)
+- **Frontend:** TypeScript, React 18, Vite, Tailwind, Radix UI / Shadcn (also applicable to Next.js, Vue, mobile, and embedded web experiences)
 - **AI/ML:** PyTorch (SLM fine‑tuning), Hugging Face Transformers, pgvector, RDFlib
-- **Infra:** GCP (primary), AWS (secondary), OpenTofu, GitLab CI, Docker
+- **Infra:** GCP (primary), AWS (secondary), Azure, on-prem hybrid patterns, OpenTofu, GitLab CI, Docker
 
 ## Code Conventions
 - **Python:** Follow `black` formatting, `ruff` linting, type hints required.
