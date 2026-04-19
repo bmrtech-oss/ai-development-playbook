@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Legal / Finance Fact-Checking Recipe",
+  "description": "A deterministic AI recipe for high-precision legal and financial fact verification using Datalog patterns and audit-ready outputs.",
+  "keywords": ["legal", "finance", "fact-checking", "Datalog", "deterministic", "audit"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Legal and Finance Enterprise Architecture"
+  },
+  "tool": [
+    "Deterministic logic",
+    "Rule execution",
+    "Schema validation",
+    "Audit trail"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Normalize documents and references",
+      "text": "Structure agreements, regulations, and financial statements into a machine-readable representation for deterministic analysis."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Apply rule-based verification",
+      "text": "Use Datalog or deterministic logic to assert facts, identify inconsistencies, and verify citations against source evidence."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Validate structured output",
+      "text": "Only accept inference results that satisfy the output schema and preserve traceable provenance metadata."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Cache repeatable queries",
+      "text": "Cache stable fact-check responses and invalidated them when legal sources or financial statements are updated."
+    }
+  ]
+}

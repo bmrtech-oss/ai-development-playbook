@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Healthcare Clinical Note Extraction Recipe",
+  "description": "A HIPAA-compliant pattern for deterministic clinical note extraction and structured clinical data delivery.",
+  "keywords": ["healthcare", "HIPAA", "clinical notes", "structured extraction", "audit", "deterministic"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Healthcare Enterprise Architecture"
+  },
+  "tool": [
+    "Secure ingestion",
+    "Schema validation",
+    "Deterministic extraction",
+    "Audit logging"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Secure note ingestion",
+      "text": "Ingest clinical notes through an encrypted pipeline and apply PHI minimization before passing content to AI workflows."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enforce deterministic extraction",
+      "text": "Use schema-driven output contracts and deterministic agent routing for clinical entity extraction."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Validate compliance and auditability",
+      "text": "Log inference provenance, permission checks, and schema validation outcomes for each extraction."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Use semantic caching selectively",
+      "text": "Cache repeatable, non-sensitive query results while invalidating on new patient updates or note changes."
+    }
+  ]
+}

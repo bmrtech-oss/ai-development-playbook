@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Retail / E-commerce AI Agent Recipe",
+  "description": "A structured AI recipe for real-time inventory and personalized styling with deterministic response validation.",
+  "keywords": ["retail", "e-commerce", "inventory", "personalization", "semantic caching", "deterministic output"],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Enterprise Retail Architecture"
+  },
+  "tool": [
+    "Agent orchestration",
+    "Schema validation",
+    "PostgreSQL",
+    "pgvector",
+    "Semantic caching"
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Normalize inventory and catalog data",
+      "text": "Ingest product status, availability, and customer preferences into a canonical store for deterministic retrieval."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Route requests with an agent",
+      "text": "Use business logic to distinguish inventory validation from styling guidance and enforce the correct response domain."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Validate outputs against schema",
+      "text": "Only return responses that match a structured schema to ensure predictable downstream behavior."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Apply semantic caching",
+      "text": "Cache repeatable lookups to reduce model calls and improve token economics."
+    }
+  ]
+}
