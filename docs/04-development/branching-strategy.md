@@ -201,5 +201,40 @@ To enforce quality, configure branch protections on `main`:
           run: npm test  # or python -m pytest
   ```
 
+## Quick Start & Resources
+
+### Getting Started
+
+1. **New to the project?** See [examples/branching-workflow-examples.md](examples/branching-workflow-examples.md) for practical examples of common workflows.
+2. **Setting up your local environment?** Follow [examples/git-hooks-ci-cd-setup.md](examples/git-hooks-ci-cd-setup.md) to install Git hooks and enable automation.
+3. **Need a quick reference?** Jump to [Branch Naming Cheatsheet](#branch-naming-cheatsheet) below.
+
+### Automated Enforcement
+
+The following tools enforce this branching strategy automatically:
+
+- **Git Hooks** (`.pre-commit-config.yaml`) – Local validation before commits
+  - Branch name format checking
+  - Commit message validation
+  - Feature flag detection
+  - File formatting and linting
+
+- **GitHub Actions** (`.github/workflows/branching-strategy-enforcement.yml`) – Cloud-based checks on PRs and pushes
+  - Branch name validation
+  - Conventional commit verification
+  - PR structure checks
+  - Test automation based on changed files
+
+- **GitLab CI** (`quickstart/gitlab-ci-pipeline.yml`) – Extended CI/CD pipeline
+  - Branch validation and hotfix alerts
+  - Release branch safeguards
+  - Deployment stages (staging, E2E, production)
+  - Feature flag integration
+
+### Helper Scripts
+
+- `scripts/validate_branch_name.py` – Validate branch naming conventions
+- `scripts/check_feature_flags.py` – Detect orphaned feature flags
+
 ## Rationale
 This hybrid approach (GitHub Flow + release branches + feature flags) suits an AI development playbook by prioritizing simplicity, continuous integration, and production stability. It avoids the complexity of Git Flow while allowing structured releases for AI/ML projects that may require careful versioning (e.g., model updates). Feature flags are particularly valuable for experimental AI features, enabling safe iteration without disrupting `main`. Always refer to `CONTRIBUTING.md` for commit message standards.

@@ -1,0 +1,102 @@
+# Pre-commit hooks configuration for enforcing standards
+# Install: pre-commit install
+# Run manually: pre-commit run --all-files
+
+default_language_version:
+  python: python3.11
+
+repos:
+  # Standard file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trim trailing whitespace
+      - id: end-of-file-fixer
+        name: Fix end of file
+      - id: check-yaml
+        name: Check YAML syntax
+        args: ['--unsafe']
+      - id: check-json
+        name: Check JSON syntax
+      - id: check-merge-conflict
+        name: Check for merge conflicts
+      - id: check-added-large-files
+        name: Check for large files
+        args: ['--maxkb=1000']
+      - id: detect-private-key
+        name: Detect private keys
+
+  # Python linting and formatting
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        name: Format Python with Black
+        language_version: python3.11
+        args: ['--line-length=100']
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.254
+    hooks:
+      - id: ruff
+        name: Lint Python with Ruff
+        args: ['--fix', '--select=E,F,I,N,UP,B']
+
+  # TypeScript/JavaScript linting
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.41.0
+    hooks:
+      - id: eslint
+        name: Lint TypeScript/JavaScript with ESLint
+        files: \.(ts|tsx|js|jsx)$
+        types: [file]
+        additional_dependencies: ['eslint', 'eslint-config-next', '@typescript-eslint/eslint-plugin']
+        args: ['--fix']
+
+  # Branch name validation
+  - repo: local
+    hooks:
+      - id: branch-name-check
+        name: Validate branch name format
+        entry: python scripts/validate_branch_name.py
+        language: system
+        stages: [commit-msg]
+        pass_filenames: false
+        always_run: true
+
+  # Conventional commits validation
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.5.3
+    hooks:
+      - id: commitizen
+        name: Validate conventional commit format
+        stages: [commit-msg]
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.33.0
+    hooks:
+      - id: markdownlint
+        name: Lint markdown files
+        args: ['--fix']
+
+  # YAML linting for CI/CD
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.28.0
+    hooks:
+      - id: yamllint
+        name: Lint YAML files
+        args: ['-d', '{extends: default, rules: {line-length: {max: 120}}}']
+        files: (\.yml|\.yaml)$
+
+  # Feature flag validation
+  - repo: local
+    hooks:
+      - id: feature-flag-check
+        name: Check for orphaned feature flags
+        entry: python scripts/check_feature_flags.py
+        language: system
+        stages: [commit]
+        pass_filenames: true
+        files: (\.py|\.ts|\.tsx|\.js|\.jsx)$

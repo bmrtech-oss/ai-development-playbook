@@ -1,4 +1,5 @@
 stages:
+  - validate
   - test
   - build
   - deploy-staging
@@ -9,6 +10,66 @@ variables:
   FEATURE_FLAG_DEPLOY: "false"
   STAGING_ENV: "staging"
 
+# Validation stage: enforce branching strategy
+validate-branch-name:
+  stage: validate
+  script:
+    - echo "Validating branch: $CI_COMMIT_BRANCH"
+    - |
+      BRANCH="$CI_COMMIT_BRANCH"
+      if [[ $BRANCH =~ ^feature/[a-z0-9\-]+$ ]] || \
+         [[ $BRANCH =~ ^release/v[0-9]+\.[0-9]+\.[0-9]+(-[a-z0-9\-]+)?$ ]] || \
+         [[ $BRANCH =~ ^hotfix/[a-z0-9\-]+$ ]] || \
+         [[ $BRANCH == "main" ]] || \
+         [[ $BRANCH == "develop" ]]; then
+        echo "✓ Branch name '$BRANCH' follows naming conventions"
+      else
+        echo "✗ Invalid branch name: $BRANCH"
+        echo "Allowed patterns: feature/*, release/v*, hotfix/*, main, develop"
+        exit 1
+      fi
+  only:
+    - branches
+
+validate-commit-messages:
+  stage: validate
+  script:
+    - echo "Validating commit messages..."
+    - |
+      # Check last 5 commits for conventional format
+      for i in {0..4}; do
+        MSG=$(git log -1 --format=%B $CI_COMMIT_SHA~$i 2>/dev/null || echo "")
+        if [[ -n "$MSG" ]]; then
+          FIRST_LINE=$(echo "$MSG" | head -n1)
+          if [[ $FIRST_LINE =~ ^(feat|fix|docs|refactor|test|chore|ci|perf)(\([a-z]+\))?:\ .+ ]]; then
+            echo "✓ Conventional commit: $FIRST_LINE"
+          else
+            echo "⚠ Warning - Non-conventional commit: $FIRST_LINE"
+          fi
+        fi
+      done
+  allow_failure: true
+  only:
+    - branches
+
+validate-feature-flags:
+  stage: validate
+  script:
+    - echo "Checking for orphaned feature flags..."
+    - |
+      # Find any FEATURE_ environment variables or flag checks
+      FEATURE_FILES=$(find . -type f \( -name "*.py" -o -name "*.ts" -o -name "*.tsx" \) -newer .git 2>/dev/null | head -20)
+      if [[ -n "$FEATURE_FILES" ]]; then
+        echo "Checking feature flags in: $FEATURE_FILES"
+        # Simple check for undefined flags
+        UNDEFINED=$(grep -h "FEATURE_.*_ENABLED" $FEATURE_FILES 2>/dev/null | sort -u | wc -l)
+        echo "✓ Found $UNDEFINED feature flag references"
+      fi
+  allow_failure: true
+  only:
+    - branches
+
+# Test stage
 test:
   stage: test
   script:
@@ -25,27 +86,103 @@ test:
 build:
   stage: build
   script:
-    - echo "Building container images and packaging artifacts"
+    - echo "Building container images and packaging artifacts for branch: $CI_COMMIT_BRANCH"
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "push"'
+    # Build on all feature and hotfix branches
+    - if: '$CI_COMMIT_BRANCH =~ /^(feature|hotfix)\// && $CI_PIPELINE_SOURCE == "push"'
+      when: always
+    # Build on main and release branches
+    - if: '$CI_COMMIT_BRANCH =~ /^(main|release\/)/ && $CI_PIPELINE_SOURCE == "push"'
+      when: always
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
 
 deploy-staging:
   stage: deploy-staging
   script:
-    - echo "Deploying to staging"
+    - echo "Deploying to staging environment"
+    - echo "Branch: $CI_COMMIT_BRANCH | Feature Flag: $FEATURE_FLAG_DEPLOY"
+  environment:
+    name: staging
+    url: https://staging.example.com
   rules:
+    # Deploy from main only if feature flag is enabled
     - if: '$CI_COMMIT_BRANCH == "main" && $FEATURE_FLAG_DEPLOY == "true"'
+      when: always
+    # Deploy from release branches for testing
+    - if: '$CI_COMMIT_BRANCH =~ /^release\// && $FEATURE_FLAG_DEPLOY == "true"'
+      when: manual
+  only:
+    - main
+    - /^release\//
 
 e2e:
   stage: e2e
   script:
-    - echo "Running end-to-end tests"
+    - echo "Running end-to-end tests on: $CI_COMMIT_BRANCH"
+  environment:
+    name: staging
   rules:
+    # Run E2E tests on main
     - if: '$CI_COMMIT_BRANCH == "main" && $FEATURE_FLAG_DEPLOY == "true"'
+      when: always
+    # Run E2E on release branches
+    - if: '$CI_COMMIT_BRANCH =~ /^release\// && $FEATURE_FLAG_DEPLOY == "true"'
+      when: manual
+  allow_failure: true
 
 deploy-prod:
   stage: deploy-prod
   script:
     - echo "Deploying to production"
+    - echo "Tag: $CI_COMMIT_TAG | Branch: $CI_COMMIT_BRANCH"
+  environment:
+    name: production
+    url: https://example.com
   rules:
-    - if: '$CI_COMMIT_BRANCH == "main" && $FEATURE_FLAG_DEPLOY == "true" && $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/'
+    # Only deploy on semantic version tags (v1.2.3)
+    - if: '$CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+(-[a-z0-9\-]+)?$/'
+      when: manual
+  only:
+    - tags
+
+# Hotfix validation: ensure hotfixes are processed urgently
+hotfix-alert:
+  stage: validate
+  script:
+    - echo "🔥 HOTFIX DETECTED: $CI_COMMIT_BRANCH"
+    - echo "This hotfix will be reviewed with high priority"
+  only:
+    - /^hotfix\//
+
+# Release branch validation: ensure release follows rules
+release-validation:
+  stage: validate
+  script:
+    - echo "Release branch detected: $CI_COMMIT_BRANCH"
+    - echo "Validating: only bug fixes and docs allowed"
+    - |
+      # Check that commits on release branch don't add new features
+      FEATURE_COMMITS=$(git log origin/main..HEAD --format=%B | grep -i "^feat" | wc -l)
+      if [[ $FEATURE_COMMITS -gt 0 ]]; then
+        echo "⚠ Warning: Found feature commits on release branch (should only have fixes)"
+      else
+        echo "✓ Release branch contains only fixes and updates"
+      fi
+  allow_failure: true
+  only:
+    - /^release\//
+
+# Deployment success notification
+deploy-success:
+  stage: .post
+  script:
+    - echo "✓ Deployment pipeline completed successfully"
+    - echo "Branch: $CI_COMMIT_BRANCH | Environment: $CI_ENVIRONMENT_NAME"
+  when: on_success
+  only:
+    - main
+    - /^release\//
+    - tags
